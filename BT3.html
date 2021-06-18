@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="input">
+    <button onclick = 'add()'>add array</button>
+    <button onclick = 'arrangeNumber()'>arrange</button>
+    <p id='day'>Array</p> 
+    <p id = 'arrange'> arrange </p>
+    <script>
+        let arr = [];
+        let i = 0;
+        let number;
+        function add(){
+            arr[i] = +document.getElementById('input').value;
+            i++;
+            document.getElementById('day').innerHTML = 'Mảng cần sắp xếp:' + '<br>' + arr;
+        }
+        // let length = arr.length;
+        function arrangeNumber(){
+            let length = arr.length;
+            for(i=0;i<length-1;i++){
+                for(j=i+1;j<length;j++){
+                    if(arr[i]>arr[j]){
+                        let tempo = arr[i];
+                        arr[i] =arr[j];
+                        arr[j]=tempo;
+                    }
+                }
+            }
+            document.getElementById('arrange').innerHTML = 'Mảng cần sắp xếp:' + '<br>' + arr;
+        }       
+    </script>
+</body>
+</html>

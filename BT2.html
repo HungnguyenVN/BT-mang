@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="input">
+    <button onclick = 'add()'>add array</button>
+    <input type="text" name="" id="numbervalue">
+    <button onclick = 'addnumber()'>add number</button>
+    <button onclick = 'check()'>change</button>
+    <p id='day'>Array</p> 
+    <p id='number'>Number</p>
+    <p id = 'check'> Change </p>
+    <script>
+        let arr = [];
+        let i = 0;
+        let number;
+        function add(){
+            arr[i] = document.getElementById('input').value;
+            i++;
+            document.getElementById('day').innerHTML = 'Mảng cần check:' + '<br>' + arr;
+        }
+        function addnumber(){
+            number = document.getElementById('numbervalue').value;
+            document.getElementById('number').innerHTML = 'Số so sánh: ' + number ;
+        }
+          
+        function check() {
+            for(i=0; i< arr.length ; i++) {
+            if (number == arr[i]){
+                arr.splice(i,1)
+                arr.push('0');
+            }
+            document.getElementById("check").innerHTML = arr;
+    }
+}           
+    </script>
+</body>
+</html>
